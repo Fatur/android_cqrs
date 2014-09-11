@@ -11,7 +11,7 @@
     <artifactId>app</artifactId>
     <packaging>apk</packaging>
 
-    <name>app</name>
+    <name>CqrsApp</name>
 
     <properties>
         <environment>development</environment>
@@ -21,10 +21,6 @@
     </properties>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>com.nineoldandroids</groupId>-->
-            <!--<artifactId>library</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>android</groupId>
             <artifactId>android</artifactId>
@@ -55,28 +51,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.google.code.gson</groupId>-->
-            <!--<artifactId>gson</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.android</groupId>-->
-            <!--<artifactId>spring-android-core</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.android</groupId>-->
-            <!--<artifactId>spring-android-rest-template</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.android</groupId>-->
-            <!--<artifactId>spring-android-auth</artifactId>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<artifactId>spring-core</artifactId>-->
-                    <!--<groupId>org.springframework</groupId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
     </dependencies>
 
     <build>

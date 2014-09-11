@@ -9,7 +9,7 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>cqrs</name>
+    <name>CQRS</name>
 
     <modules>
         <module>app</module>
@@ -34,7 +34,6 @@
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>com.nineoldandroids</groupId>
                 <artifactId>library</artifactId>

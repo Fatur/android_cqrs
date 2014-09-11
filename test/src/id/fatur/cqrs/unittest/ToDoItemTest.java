@@ -1,4 +1,4 @@
-/*package id.fatur.cqrs.unittest;
+package id.fatur.cqrs.unittest;
 
 import id.fatur.cqrs.ToDoItem;
 import id.fatur.cqrs.commands.CreateToDoItem;
@@ -9,11 +9,11 @@ import org.axonframework.test.Fixtures;
 import org.junit.Before;
 import org.junit.Test;
 
-*/
+
 /**
  * Created by Hp on 9/10/14.
  */
-/*
+
 public class ToDoItemTest extends TestCase {
     private FixtureConfiguration fixture;
     @Before
@@ -27,4 +27,3 @@ public class ToDoItemTest extends TestCase {
                 .expectEvents(new ToDoItemCreated("Todo1","need to implement the aggregate"));
     }
 }
-*/
