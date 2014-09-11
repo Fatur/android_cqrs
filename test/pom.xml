@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <artifactId>cqrs</artifactId>
+        <groupId>id.fatur.cqrs</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>CqrsTest</artifactId>
+    <packaging>apk</packaging>
+
+    <name>test</name>
+
+    <properties>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis-tck-android</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>id.fatur.cqrs</groupId>
+            <artifactId>app</artifactId>
+            <version>${project.version}</version>
+            <type>apk</type>
+        </dependency>
+        <dependency>
+            <groupId>id.fatur.cqrs</groupId>
+            <artifactId>app</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-test</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>Test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <test>
+                        <coverage>true</coverage>
+                        <createReport>true</createReport>
+                    </test>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

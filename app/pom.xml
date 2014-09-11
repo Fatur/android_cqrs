@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>cqrs</artifactId>
+        <groupId>id.fatur.cqrs</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>app</artifactId>
+    <packaging>apk</packaging>
+
+    <name>app</name>
+
+    <properties>
+        <environment>development</environment>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>com.nineoldandroids</groupId>-->
+            <!--<artifactId>library</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>android.support</groupId>
+                    <artifactId>compatibility-v4</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>android.support</groupId>
+            <artifactId>compatibility-v4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-core</artifactId>
+            <version>2.3.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>cglib-nodep</artifactId>
+                    <groupId>cglib</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>xmlpull</artifactId>
+                    <groupId>xmlpull</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.google.code.gson</groupId>-->
+            <!--<artifactId>gson</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.android</groupId>-->
+            <!--<artifactId>spring-android-core</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.android</groupId>-->
+            <!--<artifactId>spring-android-rest-template</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.android</groupId>-->
+            <!--<artifactId>spring-android-auth</artifactId>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<artifactId>spring-core</artifactId>-->
+                    <!--<groupId>org.springframework</groupId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <sdk>
+                        <!-- platform as api level (api level 16 = platform 4.1)-->
+                        <platform>16</platform>
+                    </sdk>
+                    <emulator>
+                        <avd>JB</avd>
+                        <wait>30000</wait>
+                    </emulator>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

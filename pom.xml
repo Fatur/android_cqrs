@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>id.fatur.cqrs</groupId>
+    <artifactId>cqrs</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <name>cqrs</name>
+
+    <modules>
+        <module>app</module>
+        <module>test</module>
+    </modules>
+
+    <properties>
+        <android.version>4.1.2_r4</android.version>
+        <junit.version>4.11</junit.version>
+        <android.support.version>19.1.0</android.support.version>
+        <android.test.version>4.1.1.4</android.test.version>
+        <maven.jarsigner.version>1.3.2</maven.jarsigner.version>
+        <gson.version>2.2.4</gson.version>
+        <cglib.version>3.1</cglib.version>
+        <org.objenesis.version>2.1</org.objenesis.version>
+        <org.easymock.version>3.2</org.easymock.version>
+        <android.springframework.version>1.0.1.RELEASE</android.springframework.version>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.nineoldandroids</groupId>
+                <artifactId>library</artifactId>
+                <version>2.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android-test</artifactId>
+                <version>${android.test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>android.support</groupId>
+                <artifactId>compatibility-v4</artifactId>
+                <version>${android.support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis-tck-android</artifactId>
+                <version>${org.objenesis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>${org.easymock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.android</groupId>
+                <artifactId>spring-android-core</artifactId>
+                <version>${android.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.android</groupId>
+                <artifactId>spring-android-rest-template</artifactId>
+                <version>${android.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.android</groupId>
+                <artifactId>spring-android-auth</artifactId>
+                <version>${android.springframework.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Use mvn clean install -Psign-->
+
+    <profiles>
+        <profile>
+            <id>sign</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jarsigner-plugin</artifactId>
+                        <version>${maven.jarsigner.version}</version>
+                        <executions>
+                            <execution>
+                                <id>signing</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <phase>package</phase>
+                                <inherited>true</inherited>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                        <artifactId>android-maven-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <sign>
+                                <debug>false</debug>
+                            </sign>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
