@@ -38,7 +38,7 @@ public class EventHandlerTest extends TestCase {
 
         commandGateway = new DefaultCommandGateway(commandBus);
 
-        EventStore eventStore = new FileSystemEventStore(new SimpleEventFileResolver(new File("./events")));
+        EventStore eventStore = new FileSystemEventStore(new SimpleEventFileResolver(new File("./eventsRepo")));
 
         eventBus = new SimpleEventBus();
 
