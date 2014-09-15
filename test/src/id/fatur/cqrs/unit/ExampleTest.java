@@ -1,4 +1,4 @@
-package id.fatur.cqrs.unittest;
+package id.fatur.cqrs.unit;
 
 import android.test.suitebuilder.annotation.SmallTest;
 import id.fatur.cqrs.ToDoItem;

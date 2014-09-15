@@ -10,6 +10,7 @@ bin/
 target
 gen/
 classes/
+events/
 
 # built application files
 *.apk

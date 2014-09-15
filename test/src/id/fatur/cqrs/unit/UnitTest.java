@@ -1,4 +1,4 @@
-package id.fatur.cqrs.unittest;
+package id.fatur.cqrs.unit;
 
 
 import junit.framework.TestCase;
