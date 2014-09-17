@@ -22,29 +22,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.objenesis</groupId>
-            <artifactId>objenesis-tck-android</artifactId>
-            <scope>test</scope>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <scope>provided</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>junit</artifactId>
-                    <groupId>junit</groupId>
+                    <groupId>android.support</groupId>
+                    <artifactId>compatibility-v4</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>android</groupId>
-            <artifactId>android</artifactId>
-            <scope>provided</scope>
+            <groupId>android.support</groupId>
+            <artifactId>compatibility-v4</artifactId>
         </dependency>
         <dependency>
             <groupId>com.google.android</groupId>
@@ -59,18 +49,21 @@
                     <artifactId>junit</artifactId>
                     <groupId>junit</groupId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>xpp3</artifactId>
+                    <groupId>xpp3</groupId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>id.fatur.cqrs</groupId>
             <artifactId>app</artifactId>
             <version>${project.version}</version>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>id.fatur.cqrs</groupId>
@@ -96,11 +89,11 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>Test</scope>
+            <groupId>xpp3</groupId>
+            <artifactId>xpp3</artifactId>
+            <version>1.1.4c</version>
+            <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
