@@ -2,6 +2,9 @@ package id.fatur.cqrs;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.SmallTest;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import org.axonframework.test.Fixtures;
 
 /**
@@ -24,9 +27,12 @@ public class MyActivityTest extends ActivityInstrumentationTestCase2<MyActivity>
 
     @SmallTest
     public void testMainActivity(){
-        Fixtures.newGivenWhenThenFixture(ToDoItem.class);
-        assertEquals(0,1);
-
+        EditText todo=(EditText)this.getActivity().findViewById(R.id.textToDoEntry);
+        todo.setText("testing cqrs dari UI");
+        Button add=(Button)this.getActivity().findViewById(R.id.buttonAdd);
+        add.callOnClick();
+        ListView listTodo=(ListView)this.getActivity().findViewById(R.id.listTodo);
+        assertTrue("Todo list exist",listTodo.getCount()>0);
     }
 
 }
