@@ -42,8 +42,8 @@
             <version>2.3.1</version>
             <exclusions>
                 <exclusion>
-                    <artifactId>cglib-nodep</artifactId>
-                    <groupId>cglib</groupId>
+                    <artifactId>xmlpull</artifactId>
+                    <groupId>xmlpull</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -51,6 +51,7 @@
             <groupId>xpp3</groupId>
             <artifactId>xpp3</artifactId>
             <version>1.1.4c</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
