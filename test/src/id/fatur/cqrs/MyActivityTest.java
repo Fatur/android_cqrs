@@ -1,6 +1,7 @@
 package id.fatur.cqrs;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.UiThreadTest;
 import android.test.suitebuilder.annotation.SmallTest;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,14 +26,14 @@ public class MyActivityTest extends ActivityInstrumentationTestCase2<MyActivity>
         setName(name);
     }
 
-    @SmallTest
+    @UiThreadTest
     public void testMainActivity(){
         EditText todo=(EditText)this.getActivity().findViewById(R.id.textToDoEntry);
         todo.setText("testing cqrs dari UI");
         Button add=(Button)this.getActivity().findViewById(R.id.buttonAdd);
         add.callOnClick();
         ListView listTodo=(ListView)this.getActivity().findViewById(R.id.listTodo);
-        assertTrue("Todo list exist",listTodo.getCount()>0);
+        assertTrue("Todo list exist", listTodo.getCount() > 0);
     }
 
 }
