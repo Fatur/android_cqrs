@@ -35,23 +35,17 @@
         <dependency>
             <groupId>android.support</groupId>
             <artifactId>compatibility-v4</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.axonframework</groupId>
             <artifactId>axon-core</artifactId>
             <version>2.3.1</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>xmlpull</artifactId>
-                    <groupId>xmlpull</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>xpp3</groupId>
             <artifactId>xpp3</artifactId>
             <version>1.1.4c</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 

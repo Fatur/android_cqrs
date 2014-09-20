@@ -42,16 +42,16 @@
             <scope>test</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>commons-logging</artifactId>
-                    <groupId>commons-logging</groupId>
+                    <artifactId>xpp3</artifactId>
+                    <groupId>xpp3</groupId>
                 </exclusion>
                 <exclusion>
                     <artifactId>junit</artifactId>
                     <groupId>junit</groupId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>xpp3</artifactId>
-                    <groupId>xpp3</groupId>
+                    <artifactId>xmlParserAPIs</artifactId>
+                    <groupId>xerces</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -63,19 +63,25 @@
             <groupId>id.fatur.cqrs</groupId>
             <artifactId>app</artifactId>
             <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>id.fatur.cqrs</groupId>
-            <artifactId>app</artifactId>
-            <version>${project.version}</version>
             <type>apk</type>
+            <exclusions>
+                <exclusion>
+                    <artifactId>xmlpull</artifactId>
+                    <groupId>xmlpull</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>id.fatur.cqrs</groupId>
             <artifactId>app</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <artifactId>xmlpull</artifactId>
+                    <groupId>xmlpull</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.axonframework</groupId>
@@ -87,12 +93,6 @@
                     <groupId>org.axonframework</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>xpp3</groupId>
-            <artifactId>xpp3</artifactId>
-            <version>1.1.4c</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
