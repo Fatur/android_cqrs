@@ -23,6 +23,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -32,8 +34,10 @@ public class EventHandlerTest extends TestCase {
     private CommandGateway commandGateway;
     private EventBus eventBus;
     private ToDoReport report;
+    private List<String> list;
     @Before
     public void setUp(){
+        list=new ArrayList<String>();
         CommandBus commandBus = new SimpleCommandBus();
 
         commandGateway = new DefaultCommandGateway(commandBus);
@@ -46,7 +50,7 @@ public class EventHandlerTest extends TestCase {
         repository.setEventBus(eventBus);
 
         AggregateAnnotationCommandHandler.subscribe(ToDoItem.class, repository, commandBus);
-        report=new ToDoReport();
+        report=new ToDoReport(list);
         AnnotationEventListenerAdapter.subscribe(report, eventBus);
     }
     @Test
@@ -60,6 +64,7 @@ public class EventHandlerTest extends TestCase {
         assertEquals("Description","Need to do this",report.getDescription());
 
         assertTrue("Complete Status", report.getCompleteStatus());
+        assertEquals("Inserted String","Need to do this",list.get(0));
 
     }
 }
